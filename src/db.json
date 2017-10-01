@@ -13,5 +13,6 @@
             "genre": "Comedy",
             "comments": "Alguma coisa"
         }
-    ]
+    ],
+    "genres": ["Drama", "Action", "Comedy"]
 }

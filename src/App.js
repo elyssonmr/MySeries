@@ -1,23 +1,38 @@
 import React, { Component } from 'react'
-import Ola from './ola'
+import Ola from './Ola'
+import api from './Api'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: 0
+      genres: [],
+      isLoading: false
     }
   }
 
   componentDidMount() {
-    setInterval(() => this.setState({count: this.state.count + 1}), 1000)
+    this.setState({isLoading: true})
+    api.loadGenres()
+      .then((res) => {
+        this.setState({
+          isLoading: false,
+          genres: res.data
+        })
+      })
+  }
+  renderGenreListItem(genre) {
+    return (<li className="list-group-item">{genre}</li>)
   }
 
   render() {
     return (
       <div>
         <Ola name="Elysson"></Ola>
-        <p>Count: {this.state.count}</p>
+        <ul className="list-group">
+          <li className="list-group-item active">Genreros</li>
+          {this.state.genres.map(this.renderGenreListItem)}
+        </ul>
       </div>
     )
   }
