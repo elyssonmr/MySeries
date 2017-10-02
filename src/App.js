@@ -6,6 +6,7 @@ import {
 
 import Header from "./Header"
 import Home from './Home'
+import NewSeries from "./NewSeries"
 
 
 const About = () => <p>Sobre</p>
@@ -17,6 +18,7 @@ class App extends Component {
         <div className="container">
           <Header/>
           <Route exact path="/" component={Home} />
+          <Route exact path="/new-series" component={NewSeries} />
           <Route exact path="/about" component={About} />
         </div>
       </Router>
