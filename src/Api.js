@@ -5,7 +5,8 @@ const api = axios.create({
 })
 
 const apis = {
-    loadGenres: () => api.get("genres")
+    loadGenres: () => api.get("genres"),
+    saveSeries: (newSeries) => api.post("series", newSeries)
 }
 
 

@@ -76,7 +76,8 @@ class NewSeries extends Component {
       genre: this.refs.genre.value,
       comments: this.refs.comments.value
     }
-    console.log(newSeries)
+    api.saveSeries(newSeries)
+      .then((resp) => console.log(resp))
   }
 }
 

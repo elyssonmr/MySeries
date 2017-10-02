@@ -1,18 +1,30 @@
 {
-    "series": [
-        {
-            "id": 1,
-            "name": "How I met your mother",
-            "status": "watched",
-            "genre": "Drama",
-            "comments": "Alguma coisa"
-        }, {
-            "id": 2,
-            "name": "Friends",
-            "status": "toWatch",
-            "genre": "Comedy",
-            "comments": "Alguma coisa"
-        }
-    ],
-    "genres": ["Drama", "Ação", "Comédia"]
+  "series": [
+    {
+      "id": 1,
+      "name": "How I met your mother",
+      "status": "watched",
+      "genre": "Drama",
+      "comments": "Alguma coisa"
+    },
+    {
+      "id": 2,
+      "name": "Friends",
+      "status": "toWatch",
+      "genre": "Comedy",
+      "comments": "Alguma coisa"
+    },
+    {
+      "name": "teste",
+      "status": "watched",
+      "genre": "Drama",
+      "comments": "Comments",
+      "id": 4
+    }
+  ],
+  "genres": [
+    "Drama",
+    "Ação",
+    "Comédia"
+  ]
 }
