@@ -3,20 +3,20 @@
     {
       "id": 1,
       "name": "How I met your mother",
-      "status": "watched",
+      "status": "assistido",
       "genre": "Drama",
       "comments": "Alguma coisa"
     },
     {
       "id": 2,
       "name": "Friends",
-      "status": "toWatch",
+      "status": "assistir",
       "genre": "Comedy",
       "comments": "Alguma coisa"
     },
     {
       "name": "teste",
-      "status": "watched",
+      "status": "assistido",
       "genre": "Drama",
       "comments": "Comments",
       "id": 4

@@ -1,22 +1,33 @@
 import React, { Component } from 'react'
 
+import api from "./Api"
+
 
 class Series extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      series: []
+    }
   }
-  componentDidMount() {}
+  componentDidMount() {
+    api.loadSeriesByGenre(this.props.match.params.genre)
+      .then((resp) => {
+        this.setState({
+          series: resp.data
+        })
+      })
+  }
 
-  renderSeries() {
+  renderSeries(series) {
     return (
       <div className="col-md-4">
         <div className="card text-center">
-          <img className="card-img-top" src="holder.js/100px180?bg=#767676" />
+          <img className="card-img-top" src="holder.js/100px180?bg=#767676" alt="Series Cover"/>
           <div className="card-body">
-            <h4 className="card-title">How I met your mother</h4>
-            <p className="card-text">Drama</p>
-            <a href="#" class="btn btn-primary">Gerenciar</a>
+            <h4 className="card-title">{series.name}</h4>
+            <p className="card-text">{series.genre} / {series.status}</p>
+            <a href="" className="btn btn-primary">Gerenciar</a>
           </div>
         </div>
       </div>
@@ -28,11 +39,7 @@ class Series extends Component {
       <div>
         <h1>Séries {this.props.match.params.genre}</h1>
         <div className="row">
-          {this.renderSeries()}
-          {this.renderSeries()}
-          {this.renderSeries()}
-          {this.renderSeries()}
-          {this.renderSeries()}
+          {this.state.series.map(this.renderSeries)}
         </div>
       </div>
     )
