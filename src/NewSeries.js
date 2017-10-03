@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Redirect} from 'react-router-dom'
 
 import api from './Api'
 
@@ -19,7 +20,8 @@ class NewSeries extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      "genres": []
+      genres: [],
+      redirect: false
     }
     this.saveSeries = this.saveSeries.bind(this)
   }
@@ -43,6 +45,7 @@ class NewSeries extends Component {
   render() {
     return (
       <form>
+        {this.state.redirect && <Redirect to={this.state.redirect} />}
         <h1 className="text-center">Nova Série</h1>
         <div className="form-group">
           <label htmlFor="name">Nome</label>
@@ -77,7 +80,11 @@ class NewSeries extends Component {
       comments: this.refs.comments.value
     }
     api.saveSeries(newSeries)
-      .then((resp) => console.log(resp))
+      .then((resp) => {
+        this.setState(
+          {redirect: "/series/" + this.refs.genre.value}
+        )
+      })
   }
 }
 

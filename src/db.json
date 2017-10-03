@@ -20,6 +20,13 @@
       "genre": "Drama",
       "comments": "Comments",
       "id": 4
+    },
+    {
+      "name": "Teste2",
+      "status": "watched",
+      "genre": "Drama",
+      "comments": "cdscds",
+      "id": 5
     }
   ],
   "genres": [
