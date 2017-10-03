@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import api from './Api'
 
+import {Link} from 'react-router-dom'
+
 
 class Home extends Component {
     constructor(props) {
@@ -21,7 +23,7 @@ class Home extends Component {
         })
     }
     renderGenreListItem(genre) {
-        return (<li className="list-group-item">{genre}</li>)
+        return (<li className="list-group-item"><Link to={`/series/${genre}`}>{genre}</Link></li>)
     }
 
     render() {
